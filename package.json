@@ -1,11 +1,17 @@
 {
   "name": "url-shortening",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Suleiman Mayow",
+  "description": "",
   "private": true,
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "styled-components": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
