@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from'styled-components';
-import {Brand, Ul} from '../StyledComponents/index';
+import {Brand, Ul, MenuButton} from '../StyledComponents/index';
 import MobileNav from './MobileNav'
 
 
@@ -9,6 +9,24 @@ class Header extends Component {
     super(props);
     this.state={
       navMenu: false
+    }
+  }
+
+
+  componentDidMount() {
+    window.addEventListener('resize', ()=>this.updateNavMenu()  );
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', ()=>this.updateNavMenu() );
+  }
+
+  updateNavMenu= ()=>{
+    console.log('this function is working');
+    if(this.props.width >768){
+      this.setState({
+        navMenu:false,
+      })
     }
   }
 
@@ -29,7 +47,7 @@ class Header extends Component {
   return (
     <Head>
       <Brand width={this.props.width}>
-          <h1>Shortly</h1>
+          <h4 style={{fontSize:36}}>Shortly</h4>
       </Brand>
       <Nav width={this.props.width}>
           <Ul>
@@ -42,11 +60,11 @@ class Header extends Component {
             <ItemLast>Signup</ItemLast>
           </Ul>
       </Nav>
-      <Button width={this.props.width} onClick={()=>{this.toggleMenu()}}>
+      <MenuButton width={this.props.width} onClick={()=>{this.toggleMenu()}}>
         <MobileMenuLine style={{top:'30%'}}></MobileMenuLine>
         <MobileMenuLine style={{top:'50%'}}></MobileMenuLine>
         <MobileMenuLine style={{top:'70%'}}></MobileMenuLine>
-      </Button>
+      </MenuButton>
       <MobileNav show={this.state.navMenu}/>
   </Head>
   );
@@ -85,14 +103,7 @@ const MobileMenuLine = styled.span`
   display: flex;
   margin-bottom: 2px;
 `;
-const Button = styled.button`
-  width: 45px;
-  height: 40px;
-  position: relative;
-  background-color:#fff;
-  border:0;
-  display:${props=> (props.width <768)?'flex':'none'}
-`
+
 
 
 export default Header;
