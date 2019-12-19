@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import { Button } from '../StyledComponents';
+import { Button } from '../StyledComponents'
 
-class Bannar extends Component {
+class MobileBannar extends Component {
     render() {
         return (
             <Section>
@@ -19,7 +19,7 @@ class Bannar extends Component {
             
                 </CtaContainer>
                 <ImageContainer>
-                    <img src={require('../../assets/illustration-working.svg')} alt="url-shortner illustration work"/>
+                    <img width="500px" src={require('../../assets/illustration-working.svg')} alt="url-shortner illustration work"/>
                 </ImageContainer>
                 
             </Section>
@@ -28,15 +28,17 @@ class Bannar extends Component {
 }
 const Section = styled.section`
     display: flex;
-    flex-direction:row;
+    flex-direction:column-reverse;
+    flex-wrap: wrap;
     justify-content:space-between;
-    padding-bottom: 10%;
+    margin-bottom: 30px;
 `
 const CtaContainer= styled.div`
-    width: 45%;
+    justify-content:center;
+    padding: 10% 20px;
+    width: 100%;
     display: flex;
-    text-align: start;
-    padding-left: 2rem;
+    text-align: center;
     flex-direction:row;
     display:flex;
     flex-direction:row;
@@ -44,24 +46,27 @@ const CtaContainer= styled.div`
     align-content:space-around;
 `
 const ImageContainer= styled.div`
-    width:45%;
+    width:100%;
+    padding:0 20px;
     overflow: hidden;
 `
 const Text = styled.div`
     display: flex;
     flex-direction:row;
     flex-wrap:wrap;
+    padding: 30px 0;
 `
 const TextBannar = styled.h1`
-font-size: 5rem;
+font-size: 2rem;
 font-weight: 700;
 align-self:center;
+padding-bottom:5%;
 `
 
 const ParagraphBannar = styled.p`
-font-size:1.5rem;
+font-size:1.2rem;
 color:grey;
 
 `
 
-export default  Bannar;
+export default  MobileBannar;
