@@ -17,8 +17,6 @@ export default function Services() {
             <Span/>
             {data.map( 
                 (element,index)=>{
-                switch (index){
-                    case 0:
                         return(
                         <Box key={index}>
                             <Image>
@@ -34,42 +32,7 @@ export default function Services() {
                             </Content>
                         </Box>
                         );
-                    case 1:
-                        return(
-                            <BoxSecond key={index}>
-                                <Image>
-                                    <img src={element.image} alt={ element.title}/>
-                                </Image>
-                                <Content>
-                                    <Title>
-                                        { element.title}
-                                    </Title>
-                                    <Paragraph>
-                                        { element.paragraph}
-                                    </Paragraph>
-                                </Content>
-                            </BoxSecond>
-                
-                        );
-                    case 2:
-                        return(
-                            <BoxLast key={index}>
-                                <Image>
-                                    <img src={element.image} alt={ element.title}/>
-                                </Image>
-                                <Content>
-                                    <Title>
-                                        { element.title}
-                                    </Title>
-                                    <Paragraph>
-                                        { element.paragraph}
-                                    </Paragraph>
-                                </Content>
-                            </BoxLast>
-                        );
-                    default:
-                        break;
-                }
+                    
             })}
 
             </Wrapper>
@@ -101,29 +64,7 @@ const Box = styled.div`
     height:fit-content;
     word-break:break-word;
     align-items: center;
-`
-const BoxSecond = styled.div`
-    word-break:break-word;
-    display: flex;
-    background-color: white;
-    width: 80%;
-    flex-direction:column;
-    border-radius:12px;
-    position:relative;
-    height:fit-content;
     margin:75px 0;
-    align-items: center;
-`
-const BoxLast = styled.div`
-    display: flex;
-    background-color: white;
-    width: 80%;
-    flex-direction:column;
-    border-radius:12px;
-    position:relative;
-    height:fit-content;
-    align-items: center;
-    word-break:break-word;
 `
 const Span = styled.span`
 position: absolute;
